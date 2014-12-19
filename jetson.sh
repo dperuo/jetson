@@ -20,13 +20,25 @@ installed="${g}${yep} Installed\n"
 notInstalled="${r}${nope} Not Installed\n"
 checkingFor="${y}Checking for"
 
-
+# Installers
 printf "${checkingFor} node... "      && which node > /dev/null     && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} npm... "       && which npm > /dev/null      && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} bower... "     && which bower > /dev/null    && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} yeoman... "    && which yo > /dev/null       && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} httpster... "  && which httpster > /dev/null && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} puer... "      && which puer > /dev/null     && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} homebrew... "  && which brew > /dev/null     && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} ruby... "      && which ruby > /dev/null     && printf "${installed}" || printf "${notInstalled}"
+
+# Packages
+printf "${checkingFor} browserify... " && which browserify > /dev/null && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} cvs... "        && which cvs > /dev/null        && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} grunt... "      && which grunt > /dev/null      && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} gulp... "       && which gulp > /dev/null       && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} homebrew... "   && which brew > /dev/null       && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} httpster... "   && which httpster > /dev/null   && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} nginx... "      && which nginx > /dev/null      && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} puer... "       && which puer > /dev/null       && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} rails... "      && which rails > /dev/null      && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} watchify... "   && which watchify > /dev/null   && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} yeoman... "     && which yo > /dev/null         && printf "${installed}" || printf "${notInstalled}"
 
 
 # npm -g install bower
