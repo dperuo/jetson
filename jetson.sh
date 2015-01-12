@@ -29,6 +29,7 @@ printf "${checkingFor} ruby... "      && which ruby > /dev/null     && printf "$
 
 # Packages
 printf "${checkingFor} browserify... " && which browserify > /dev/null && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} compass... "    && which compass > /dev/null    && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} cvs... "        && which cvs > /dev/null        && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} grunt... "      && which grunt > /dev/null      && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} gulp... "       && which gulp > /dev/null       && printf "${installed}" || printf "${notInstalled}"
