@@ -38,6 +38,7 @@ printf "${checkingFor} httpster... "   && which httpster > /dev/null   && printf
 printf "${checkingFor} nginx... "      && which nginx > /dev/null      && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} puer... "       && which puer > /dev/null       && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} rails... "      && which rails > /dev/null      && printf "${installed}" || printf "${notInstalled}"
+printf "${checkingFor} sass... "       && which sass > /dev/null       && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} watchify... "   && which watchify > /dev/null   && printf "${installed}" || printf "${notInstalled}"
 printf "${checkingFor} yeoman... "     && which yo > /dev/null         && printf "${installed}" || printf "${notInstalled}"
 
