@@ -16,34 +16,23 @@ nc='\033[0m'    # No Color
 # String Variables
 yep='✔'
 nope='✘'
-installed="${g}${yep} Installed\n"
-notInstalled="${r}${nope} Not Installed\n"
+installed="${g}${yep} Installed"
+notInstalled="${r}${nope} Not Installed"
 checkingFor="${y}Checking for"
 
-# Installers
-printf "${checkingFor} node... "      && which node > /dev/null     && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} npm... "       && which npm > /dev/null      && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} bower... "     && which bower > /dev/null    && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} homebrew... "  && which brew > /dev/null     && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} ruby... "      && which ruby > /dev/null     && printf "${installed}" || printf "${notInstalled}"
+# Apps To Install
+apps=($(cat ./apps.txt))
+toInstall=()
 
-# Packages
-printf "${checkingFor} browserify... " && which browserify > /dev/null && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} compass... "    && which compass > /dev/null    && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} cvs... "        && which cvs > /dev/null        && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} grunt... "      && which grunt > /dev/null      && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} gulp... "       && which gulp > /dev/null       && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} homebrew... "   && which brew > /dev/null       && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} httpster... "   && which httpster > /dev/null   && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} nginx... "      && which nginx > /dev/null      && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} puer... "       && which puer > /dev/null       && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} rails... "      && which rails > /dev/null      && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} sass... "       && which sass > /dev/null       && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} watchify... "   && which watchify > /dev/null   && printf "${installed}" || printf "${notInstalled}"
-printf "${checkingFor} yeoman... "     && which yo > /dev/null         && printf "${installed}" || printf "${notInstalled}"
+for app in ${apps[@]}; do
+  printf "${checkingFor} ${app}... "
 
+  if which $app > /dev/null; then
+    printf "${installed}${nc}\n"
+  else
+    printf "${notInstalled}${nc}\n" && toInstall+=($app)
+  fi
+done
+unset app
 
-# npm -g install bower
-# npm -g install yo
-# npm -g install httpster
-# npm -g install puer
+echo "\n${y}Installing ${toInstall[@]}...\n"
