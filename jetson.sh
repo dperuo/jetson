@@ -1,8 +1,8 @@
 # jetson.sh
-# Copywright 2015 Derek Peruo
+# Copywright 2015-2025 Derek Peruo
 # Released under the MIT license
 #
-# http://github.com/dperuo
+# https://github.com/dperuo/jetson
 #
 
 #!/usr/bin/env bash
